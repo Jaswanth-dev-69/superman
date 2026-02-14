@@ -1,4 +1,4 @@
-import Navbar from './components/navbar'
+import Navbar from './components/Navbar'
 import Home from './pages/home'
 import Clark from './pages/Clark'
 import Fortress from './pages/Fortress'
