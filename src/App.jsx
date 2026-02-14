@@ -1,5 +1,5 @@
 import Navbar from './components/Navbar'
-import Home from './pages/home'
+import Home from './pages/Home'
 import Clark from './pages/Clark'
 import Fortress from './pages/Fortress'
 
