@@ -1,16 +1,61 @@
-# React + Vite
+# Kal-El: Legacy of Krypton
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A stunning, immersive web experience dedicated to the lore of Superman (Kal-El). Built with modern web technologies, this project features high-end animations, parallax effects, and interactive elements to tell the story of the Man of Steel.
 
-Currently, two official plugins are available:
+![Project Banner](public/images/lastpagepic.jpg) 
+*(Note: Replace with a representative screenshot if available)*
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Technologies
 
-## React Compiler
+*   **Framework**: [React](https://react.dev/) + [Vite](https://vitejs.dev/)
+*   **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+*   **Animations**: 
+    *   [GSAP](https://gsap.com/) (ScrollTrigger, Flip)
+    *   [React Spring](https://www.react-spring.dev/) (Parallax)
+*   **Routing**: React Router DOM
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+*   **Immersive Home Page**: Visually striking landing page with Superman-themed aesthetics.
+*   **Fortress of Solitude**: Interactive "Suits" gallery using GSAP Flip for seamless transitions and ScrollTrigger for parallax depth.
+*   **Clark Kent Section**: A glimpse into the human side of the hero.
+*   **Legacy (Last Page)**: A mesmerizing interactive finale featuring a **3D Image Trail** effect that reacts to mouse movement, showcasing the history of the character.
+*   **Responsive Design**: Optimized for various screen sizes.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Installation & Run
+
+1.  **Clone the repository**:
+    ```bash
+    git clone https://github.com/Jaswanth-dev-69/superman.git
+    cd superman/website/kal-el
+    ```
+
+2.  **Install dependencies**:
+    ```bash
+    npm install
+    ```
+
+3.  **Run the development server**:
+    ```bash
+    npm run dev
+    ```
+
+4.  **Build for production**:
+    ```bash
+    npm run build
+    ```
+
+## 📂 Project Structure
+
+*   `src/components`: Reusable UI components (Navbar, ImageTrail, etc.).
+*   `src/pages`: Main page views (Home, Clark, Fortress, LastPage).
+*   `public/images`: Static assets for backgrounds and galleries.
+
+## 🎨 Credits
+
+*   Design inspiration: Man of Steel, DC Comics.
+*   Image Trail Effect: Adapted from React Bits.
+
+---
+
+*Made with ❤️ for the House of El.*
