@@ -2,6 +2,7 @@ import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import Clark from './pages/Clark'
 import Fortress from './pages/Fortress'
+import LastPage from './pages/LastPage'
 
 export default function App() {
   return (
@@ -15,6 +16,9 @@ export default function App() {
       </section>
       <section id="fortress">
         <Fortress />
+      </section>
+      <section id="lastpage">
+        <LastPage />
       </section>
     </main>
   )
