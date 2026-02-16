@@ -3,7 +3,7 @@
 A stunning, immersive web experience dedicated to the lore of Superman (Kal-El). Built with modern web technologies, this project features high-end animations, parallax effects, and interactive elements to tell the story of the Man of Steel.
 
 ![Project Banner](public/images/lastpagepic.jpg) 
-*(Note: Replace with a representative screenshot if available)*
+
 
 ## 🚀 Technologies
 
