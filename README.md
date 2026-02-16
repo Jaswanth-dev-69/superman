@@ -27,7 +27,7 @@ A stunning, immersive web experience dedicated to the lore of Superman (Kal-El).
 1.  **Clone the repository**:
     ```bash
     git clone https://github.com/Jaswanth-dev-69/superman.git
-    cd superman/website/kal-el
+    cd <folder name>
     ```
 
 2.  **Install dependencies**:
@@ -58,4 +58,4 @@ A stunning, immersive web experience dedicated to the lore of Superman (Kal-El).
 
 ---
 
-*Made with ❤️ for the House of El.*
+
