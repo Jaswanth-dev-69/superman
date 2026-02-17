@@ -101,11 +101,11 @@ export default function Clark() {
                 sectionRef.current,
                 {
                     background:
-                        'linear-gradient(180deg, #050a18 0%, #0a1128 100%)',
+                        'linear-gradient(180deg, #070A0F 0%, #0D1321 100%)',
                 },
                 {
                     background:
-                        'linear-gradient(180deg, #050a18 0%, #1a237e 50%, #c41e3a 100%)',
+                        'linear-gradient(180deg, #070A0F 0%, #1B2A41 50%, #7A0C12 100%)',
                     ease: 'none',
                     scrollTrigger: {
                         trigger: sectionRef.current,
@@ -145,20 +145,20 @@ export default function Clark() {
                     className="absolute inset-0"
                     style={{
                         background:
-                            'linear-gradient(to left, rgba(5,10,24,0.15) 0%, rgba(5,10,24,0.55) 30%, rgba(5,10,24,0.88) 55%, rgba(5,10,24,0.97) 75%)',
+                            'linear-gradient(to left, rgba(7,10,15,0.15) 0%, rgba(7,10,15,0.55) 30%, rgba(7,10,15,0.88) 55%, rgba(7,10,15,0.97) 75%)',
                     }}
                 />
                 {/* Bottom + top fade */}
                 <div
                     className="absolute bottom-0 left-0 w-full h-40"
                     style={{
-                        background: 'linear-gradient(to top, #050a18, transparent)',
+                        background: 'linear-gradient(to top, #070A0F, transparent)',
                     }}
                 />
                 <div
                     className="absolute top-0 left-0 w-full h-24"
                     style={{
-                        background: 'linear-gradient(to bottom, #050a18, transparent)',
+                        background: 'linear-gradient(to bottom, #070A0F, transparent)',
                     }}
                 />
             </div>
@@ -171,8 +171,8 @@ export default function Clark() {
                 >
                     {/* Section label */}
                     <div ref={labelRef} className="flex items-center gap-3 mb-5">
-                        <div className="w-8 h-[2px] bg-crimson-500" />
-                        <span className="font-body text-xs tracking-[0.3em] uppercase text-crimson-400 font-medium">
+                        <div className="w-8 h-[2px] bg-hero-gold" />
+                        <span className="font-body text-xs tracking-[0.3em] uppercase text-hero-gold font-medium">
                             Smallville, Kansas
                         </span>
                     </div>
@@ -180,7 +180,7 @@ export default function Clark() {
                     {/* Heading */}
                     <h2
                         ref={headingRef}
-                        className="font-display text-4xl lg:text-5xl xl:text-6xl tracking-wide text-white mb-6 leading-tight"
+                        className="font-display text-4xl lg:text-5xl xl:text-6xl tracking-wide text-hero-text mb-6 leading-tight"
                     >
                         The Boy from{' '}
                         <span className="text-gradient-gold">Smallville</span>
@@ -189,7 +189,7 @@ export default function Clark() {
                     {/* Paragraphs - staggered via GSAP */}
                     <p
                         ref={addParaRef}
-                        className="font-body text-base text-white/70 leading-relaxed mb-4"
+                        className="font-body text-base text-hero-textSoft leading-relaxed mb-4"
                     >
                         Before the world knew his name, he was just Clark — a quiet kid
                         learning what it meant to be human from people who chose to love
@@ -198,7 +198,7 @@ export default function Clark() {
 
                     <p
                         ref={addParaRef}
-                        className="font-body text-base text-white/70 leading-relaxed mb-8"
+                        className="font-body text-base text-hero-textSoft leading-relaxed mb-8"
                     >
                         Jonathan and Martha Kent gave him more than a home — they gave
                         him a compass. In Smallville, Clark learned that true power
@@ -206,13 +206,13 @@ export default function Clark() {
                     </p>
 
                     {/* Quote - also staggered */}
-                    <blockquote ref={quoteRef} className="relative pl-5 border-l-2 border-gold-400/30">
-                        <p className="font-serif text-lg text-white/80 italic leading-relaxed">
+                    <blockquote ref={quoteRef} className="relative pl-5 border-l-2 border-hero-gold/30">
+                        <p className="font-serif text-lg text-hero-text italic leading-relaxed">
                             "You will give the people of Earth an ideal to strive towards.
                             They will stumble. They will fall. But in time, they will join
                             you in the sun."
                         </p>
-                        <footer className="mt-3 font-body text-xs tracking-[0.2em] uppercase text-gold-400/60">
+                        <footer className="mt-3 font-body text-xs tracking-[0.2em] uppercase text-hero-gold/60">
                             — Jor-El
                         </footer>
                     </blockquote>

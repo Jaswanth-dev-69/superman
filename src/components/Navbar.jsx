@@ -2,70 +2,68 @@ import { useState, useEffect } from 'react'
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false)
+    const [activeSection, setActiveSection] = useState('home')
 
     useEffect(() => {
-        const onScroll = () => setScrolled(window.scrollY > 60)
+        const onScroll = () => {
+            setScrolled(window.scrollY > 60)
+
+            // Simple scroll spy logic
+            const sections = ['home', 'clark', 'fortress', 'lastpage']
+            for (const section of sections) {
+                const el = document.getElementById(section)
+                if (el) {
+                    const rect = el.getBoundingClientRect()
+                    if (rect.top <= 200 && rect.bottom >= 200) {
+                        setActiveSection(section)
+                    }
+                }
+            }
+        }
         window.addEventListener('scroll', onScroll, { passive: true })
         return () => window.removeEventListener('scroll', onScroll)
     }, [])
 
     const handleNav = (e, id) => {
         e.preventDefault()
+        setActiveSection(id)
         const el = document.getElementById(id)
         if (el) el.scrollIntoView({ behavior: 'smooth' })
     }
 
+    const items = [
+        { label: "Home", id: "home" },
+        { label: "Kal-el", id: "clark" },
+        { label: "Suits", id: "fortress" },
+        { label: "Legacy", id: "lastpage" }
+    ]
+
     return (
         <nav
-            className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled
-                ? 'glass-panel shadow-lg shadow-navy-950/50'
-                : 'bg-transparent'
+            className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 rounded-full px-8 py-2 ${activeSection !== 'home' ? 'glass-panel' : ''
                 }`}
         >
-            <div className="grid grid-cols-3 items-center py-5" style={{ paddingLeft: '60px', paddingRight: '60px' }}>
-                {/* Logo text - left */}
-                <a
-                    href="#home"
-                    onClick={(e) => handleNav(e, 'home')}
-                    className="font-display text-2xl tracking-[0.2em] text-white hover:text-gold-400 transition-colors duration-300 justify-self-start"
-                >
-                    KAL-EL
-                </a>
-
-                {/* Navigation - center */}
-                <ul className="flex items-center justify-center gap-10">
-                    <li>
+            <ul className="flex items-center gap-8">
+                {items.map((item) => (
+                    <li key={item.id}>
                         <a
-                            href="#home"
-                            onClick={(e) => handleNav(e, 'home')}
-                            className="font-body text-sm font-medium tracking-wider uppercase text-white/70 hover:text-gold-400 transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-gold-400 hover:after:w-full after:transition-all after:duration-300"
+                            href={`#${item.id}`}
+                            onClick={(e) => handleNav(e, item.id)}
+                            className={`font-body text-sm font-medium tracking-wider uppercase transition-colors duration-300 relative py-1
+                                ${activeSection === item.id ? 'text-hero-text' : 'text-hero-textSoft hover:text-hero-text'}
+                            `}
                         >
-                            Home
+                            {item.label}
+                            {/* Underline */}
+                            <span
+                                className={`absolute bottom-0 left-0 h-[2px] bg-hero-gold transition-all duration-300 ease-out
+                                    ${activeSection === item.id ? 'w-full' : 'w-0 group-hover:w-full'}
+                                `}
+                            />
                         </a>
                     </li>
-                    <li>
-                        <a
-                            href="#clark"
-                            onClick={(e) => handleNav(e, 'clark')}
-                            className="font-body text-sm font-medium tracking-wider uppercase text-white/70 hover:text-gold-400 transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-gold-400 hover:after:w-full after:transition-all after:duration-300"
-                        >
-                            Clark Kent
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="#fortress"
-                            onClick={(e) => handleNav(e, 'fortress')}
-                            className="font-body text-sm font-medium tracking-wider uppercase text-white/70 hover:text-gold-400 transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-gold-400 hover:after:w-full after:transition-all after:duration-300"
-                        >
-                            Suits
-                        </a>
-                    </li>
-                </ul>
-
-                {/* Empty right column for balance */}
-                <div />
-            </div>
+                ))}
+            </ul>
         </nav>
     )
 }

@@ -76,7 +76,7 @@ export default function Home() {
                 className="absolute inset-0"
                 style={{
                     background:
-                        'linear-gradient(180deg, rgba(5,10,24,0.2) 0%, rgba(5,10,24,0.4) 40%, rgba(5,10,24,0.75) 70%, rgba(5,10,24,0.95) 100%)',
+                        'linear-gradient(180deg, rgba(7,10,15,0.2) 0%, rgba(7,10,15,0.4) 40%, rgba(7,10,15,0.75) 70%, rgba(7,10,15,0.95) 100%)',
                 }}
             />
 
@@ -85,17 +85,17 @@ export default function Home() {
                 {/* Subtitle */}
                 <h2
                     ref={subtitleRef}
-                    className="font-display text-2xl md:text-3xl lg:text-4xl tracking-[0.25em] text-white mb-4"
+                    className="font-display text-2xl md:text-3xl lg:text-4xl tracking-[0.25em] text-hero-text mb-4"
                 >
                     Hope.{' '}
-                    <span className="text-crimson-400">Strength.</span>{' '}
+                    <span className="text-hero-gold">Strength.</span>{' '}
                     <span className="text-gradient-gold">Sacrifice.</span>
                 </h2>
 
                 {/* Description */}
                 <p
                     ref={descRef}
-                    className="font-body text-sm md:text-base text-white/55 max-w-lg leading-relaxed mb-8"
+                    className="font-body text-sm md:text-base text-hero-textMuted max-w-lg leading-relaxed mb-8"
                 >
                     Before the cape, before the symbol — there was a boy from a dying world,
                     sent across the stars to become something greater.
@@ -106,10 +106,10 @@ export default function Home() {
                     <animated.button
                         style={btn1Spring}
                         onClick={handleScrollToClark}
-                        className="group relative px-12 py-4 bg-crimson-500 text-white font-body font-semibold text-base tracking-widest uppercase rounded-lg overflow-hidden transition-all duration-300 hover:bg-crimson-400 hover:shadow-xl hover:shadow-crimson-500/30 cursor-pointer"
+                        className="group relative px-12 py-4 bg-hero-gold text-hero-black font-body font-semibold text-base tracking-widest uppercase rounded-lg overflow-hidden transition-all duration-300 hover:bg-hero-goldHover hover:shadow-xl hover:shadow-hero-gold/30 cursor-pointer"
                     >
                         <span className="relative z-10">Begin the Journey</span>
-                        <div className="absolute inset-0 bg-gradient-to-r from-crimson-600 to-crimson-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-hero-goldHover to-hero-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </animated.button>
 
 
@@ -118,9 +118,9 @@ export default function Home() {
 
             {/* ── Bottom fade into next section ── */}
             <div
-                className="absolute bottom-0 left-0 w-full h-24 pointer-events-none z-[5]"
+                className="absolute bottom-0 left-0 w-full h-24 pointer-events-none z-5"
                 style={{
-                    background: 'linear-gradient(to bottom, transparent, var(--color-navy-950))',
+                    background: 'linear-gradient(to bottom, transparent, var(--color-hero-black))',
                 }}
             />
         </div>

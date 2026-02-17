@@ -6,7 +6,7 @@ import LastPage from './pages/LastPage'
 
 export default function App() {
   return (
-    <main className="bg-navy-950 min-h-screen text-white selection:bg-crimson-500 selection:text-white">
+    <main className="bg-hero-black min-h-screen text-hero-text selection:bg-hero-red selection:text-hero-text">
       <Navbar />
       <section id="home">
         <Home />

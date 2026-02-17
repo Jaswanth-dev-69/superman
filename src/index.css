@@ -2,23 +2,32 @@
 
 /* ── Superman Cinematic Theme ── */
 @theme {
-  --color-navy-950: #050a18;
-  --color-navy-900: #0a1128;
-  --color-navy-800: #101d3a;
-  --color-navy-700: #1a2d52;
-  --color-navy-600: #243d6a;
+  /* Base Neutrals */
+  --color-hero-black: #070A0F;
+  --color-hero-ink: #0D1321;
+  --color-hero-steel: #121826;
 
-  --color-crimson-600: #c41e3a;
-  --color-crimson-500: #dc143c;
-  --color-crimson-400: #e8425a;
+  /* Surfaces */
+  --color-hero-card: #0F172A;
+  --color-hero-border: #1E293B;
+  --color-hero-borderHover: #2D3B55;
 
-  --color-gold-500: #c49b30;
-  --color-gold-400: #d4a843;
-  --color-gold-300: #e4be6a;
+  /* Text */
+  --color-hero-text: #E6E9EF;
+  --color-hero-textSoft: #AAB2C0;
+  --color-hero-textMuted: #6E7687;
 
-  --color-royal-700: #1a237e;
-  --color-royal-600: #283593;
-  --color-royal-500: #3949ab;
+  /* Superman Suit Blue */
+  --color-hero-blue: #1B2A41;
+  --color-hero-blueGlow: #2C4A78;
+
+  /* Cape Red */
+  --color-hero-red: #7A0C12;
+  --color-hero-redHover: #A0141C;
+
+  /* Shield Gold */
+  --color-hero-gold: #B08D2B;
+  --color-hero-goldHover: #D1AA3F;
 
   --font-display: "Bebas Neue", sans-serif;
   --font-serif: "Cormorant Garamond", serif;
@@ -40,8 +49,8 @@ html {
 
 body {
   font-family: var(--font-body);
-  background-color: var(--color-navy-950);
-  color: #e8e8e8;
+  background-color: var(--color-hero-black);
+  color: var(--color-hero-text);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -49,21 +58,24 @@ body {
 
 /* ── Selection ── */
 ::selection {
-  background: var(--color-crimson-500);
-  color: #fff;
+  background: var(--color-hero-red);
+  color: var(--color-hero-text);
 }
 
 /* ── Glass Panel utility ── */
 .glass-panel {
-  background: rgba(10, 17, 40, 0.65);
+  background: rgba(13, 19, 33, 0.65);
+  /* hero-ink */
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(196, 168, 67, 0.08);
+  border: 1px solid rgba(176, 141, 43, 0.15);
+  /* hero-gold */
 }
 
 /* ── Text gradient utility ── */
+/* ── Text gradient utility ── */
 .text-gradient-gold {
-  background: linear-gradient(135deg, var(--color-gold-400), var(--color-gold-300));
+  background: linear-gradient(135deg, var(--color-hero-gold), var(--color-hero-goldHover));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

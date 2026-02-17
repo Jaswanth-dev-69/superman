@@ -20,7 +20,7 @@ export default function LastPage() {
     return (
         <div
             ref={containerRef}
-            className="relative w-full h-screen overflow-hidden bg-black"
+            className="relative w-full h-screen overflow-hidden bg-hero-black"
         >
             {/* Background Image */}
             <div
@@ -40,7 +40,7 @@ export default function LastPage() {
 
             {/* Content Overlay */}
             <div className="absolute inset-0 z-30 flex items-center justify-center pointer-events-none">
-                <h2 className="font-display text-4xl md:text-8xl text-white mix-blend-overlay opacity-50 tracking-widest uppercase">
+                <h2 className="font-display text-4xl md:text-8xl text-hero-text mix-blend-overlay opacity-50 tracking-widest uppercase">
                     Legacy
                 </h2>
             </div>

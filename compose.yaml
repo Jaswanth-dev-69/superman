@@ -1,0 +1,16 @@
+services:
+  server:
+    build:
+      context: .
+      target: development
+    ports:
+      - 3000:3000
+    environment:
+      - NODE_ENV=development
+    develop:
+      watch:
+        - action: sync
+          path: .
+          target: /usr/src/app
+        - action: rebuild
+          path: package.json
