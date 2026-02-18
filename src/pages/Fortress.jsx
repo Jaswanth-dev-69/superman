@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import InfiniteMenu from '../components/InfiniteMenu'
+import CircularGallery from '../components/core/CircularGallery'
 
 const items = [
     {
@@ -56,9 +56,9 @@ export default function Fortress() {
                 </h2>
             </div>
 
-            {/* Infinite Menu Component */}
+            {/* Circular Gallery Component */}
             <div className="w-full h-full relative z-10">
-                <InfiniteMenu items={items} scale={1.0} />
+                <CircularGallery items={items} bend={4} scrollSpeed={3} borderRadius={0.05} font="bold 30px Figtree" />
             </div>
         </div>
     )

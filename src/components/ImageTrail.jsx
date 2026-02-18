@@ -3,10 +3,10 @@ import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 
 function lerp(a, b, n) {
-    return (1 - n) * a + n * b;
+    return (1 - n) * a + n * b;   //mouse pointer movement smooth like a butter and not teleporting
 }
 
-function getLocalPointerPos(e, rect) {
+function getLocalPointerPos(e, rect) {   //checks where the mouse present inside hte box 
     let clientX = 0,
         clientY = 0;
     if (e.touches && e.touches.length > 0) {
@@ -22,13 +22,13 @@ function getLocalPointerPos(e, rect) {
     };
 }
 
-function getMouseDistance(p1, p2) {
+function getMouseDistance(p1, p2) {     //checks the mouse movement and only the images appears only moved in a greater way 
     const dx = p1.x - p2.x;
     const dy = p1.y - p2.y;
     return Math.hypot(dx, dy);
 }
 
-class ImageItem {
+class ImageItem {                       //holds the images image  container 
     DOM = { el: null, inner: null };
     defaultStyle = { scale: 1, x: 0, y: 0, opacity: 0 };
     rect = null;
@@ -54,11 +54,11 @@ class ImageItem {
 // ... All variants included for completeness based on user input ...
 // Starting with Variant 8 as requested
 
-class ImageTrailVariant8 {
+class ImageTrailVariant8 {            //main class get the images from the container 
     constructor(container) {
         this.container = container;
         this.DOM = { el: container };
-        this.images = [...container.querySelectorAll('.content__img')].map(img => new ImageItem(img));
+        this.images = [...container.querySelectorAll('.content__img')].map(img => new ImageItem(img));    //this stores the images in a array like structure(img1,img1,img3...)
         this.imagesTotal = this.images.length;
         this.imgPosition = 0;
         this.zIndexVal = 1;
@@ -79,14 +79,14 @@ class ImageTrailVariant8 {
             const rect = container.getBoundingClientRect();
             this.mousePos = getLocalPointerPos(ev, rect);
         };
-        container.addEventListener('mousemove', handlePointerMove);
+        container.addEventListener('mousemove', handlePointerMove);     //listens to the mouse movements
         container.addEventListener('touchmove', handlePointerMove);
 
         const initRender = ev => {
             const rect = container.getBoundingClientRect();
             this.mousePos = getLocalPointerPos(ev, rect);
             this.cacheMousePos = { ...this.mousePos };
-            requestAnimationFrame(() => this.render());
+            requestAnimationFrame(() => this.render());            //this renders the animation  runs like a game forever
             container.removeEventListener('mousemove', initRender);
             container.removeEventListener('touchmove', initRender);
         };
@@ -95,28 +95,28 @@ class ImageTrailVariant8 {
     }
 
     render() {
-        let distance = getMouseDistance(this.mousePos, this.lastMousePos);
-        this.cacheMousePos.x = lerp(this.cacheMousePos.x, this.mousePos.x, 0.1);
+        let distance = getMouseDistance(this.mousePos, this.lastMousePos);             //checks the distance between the mouse and the last mouse position
+        this.cacheMousePos.x = lerp(this.cacheMousePos.x, this.mousePos.x, 0.1);        //lerp is used for smooth movement
         this.cacheMousePos.y = lerp(this.cacheMousePos.y, this.mousePos.y, 0.1);
 
-        if (distance > this.threshold) {
+        if (distance > this.threshold) {                                                //if the distance is greater than the threshold then show the next image
             this.showNextImage();
             this.lastMousePos = { ...this.mousePos };
         }
-        if (this.isIdle && this.zIndexVal !== 1) {
-            this.zIndexVal = 1;
+        if (this.isIdle && this.zIndexVal !== 1) {                                        //if the image is idle and the z-index is not 1 then set the z-index to 1
+            this.zIndexVal = 1;                                                             //this is used to bring the image to the front
         }
         requestAnimationFrame(() => this.render());
     }
 
-    showNextImage() {
+    showNextImage() {                                                                   //this function shows the next image
         const rect = this.container.getBoundingClientRect();
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
         const relX = this.mousePos.x - centerX;
         const relY = this.mousePos.y - centerY;
 
-        this.rotation.x = -(relY / centerY) * 30;
+        this.rotation.x = -(relY / centerY) * 30;                      //according to the mouse movement it moves right side and left side 
         this.rotation.y = (relX / centerX) * 30;
         this.cachedRotation = { ...this.rotation };
 
